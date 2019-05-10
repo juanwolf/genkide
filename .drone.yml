@@ -10,20 +10,3 @@ steps:
   image: golang:1.12
   commands:
   - make test
-
-- name: release
-  image: golang:1.12
-  commands:
-    - git fetch --tags # Drone does not download tags by default
-    - curl -sL https://git.io/goreleaser | bash
-  environment:
-    GITHUB_TOKEN:
-      from_secret: github_token
-  when:
-    event:
-      - tag
-
----
-kind: secret
-data:
-  github_token: YRYunWgI5nLa5QUjSlVe72RYeCdH0xl77RnZaY6kvMRiyRUFKTT7bfUcuVRYtbpxhfT6Vxe78UQ9TNisaYjR523M2YiPvnZUFxjKOVcgvQ==
