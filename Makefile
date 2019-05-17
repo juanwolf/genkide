@@ -1,6 +1,6 @@
 .PHONY: test
 test:
-	go test ./...
+	go get -t && go test ./main.go
 
 .PHONY: build
 build:
