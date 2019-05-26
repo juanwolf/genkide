@@ -25,8 +25,9 @@ func main() {
 	fmt.Println("Deleted users:")
 
 	for _, user := range users {
+		updatedTime := user.Updated.Time()
 		if user.Deleted {
-			fmt.Println("-", fmt.Sprintf("%s(%s)", user.Name, user.RealName), "updated", user.Updated)
+			fmt.Println("-", fmt.Sprintf("%s(%s)", user.Name, user.RealName), "updated", updatedTime.Format("2006/01/02"))
 		}
 	}
 }
