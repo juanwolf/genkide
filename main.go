@@ -35,7 +35,7 @@ func main() {
 		if user.Deleted {
 			fmt.Print(fmt.Sprintf("- %s ", user.Name))
 			if user.RealName != "" {
-				fmt.Print(fmt.Sprint("(%s)", user.RealName))
+				fmt.Print(fmt.Sprintf("(%s)", user.RealName))
 			}
 			fmt.Println("on", updatedTime.Format("2006/01/02"))
 		}
